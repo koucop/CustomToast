@@ -14,8 +14,16 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         buttonToast.setOnClickListener {
-            Toast.makeText(this, "$count", Toast.LENGTH_SHORT).show()
-            count++
+            showSystemToast()
         }
+    }
+
+    private fun showSystemToast() {
+        Toast.makeText(this, "$count", Toast.LENGTH_SHORT).show()
+        count++
+    }
+
+    private fun showCustomToast() {
+
     }
 }
