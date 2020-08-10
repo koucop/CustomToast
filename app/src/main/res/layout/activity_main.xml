@@ -16,6 +16,7 @@
         android:padding="8dp"
         android:textColor="@android:color/white"
         android:visibility="gone"
+        android:alpha="0.0"
         tools:text="111"
         tools:visibility="visible" />
 
