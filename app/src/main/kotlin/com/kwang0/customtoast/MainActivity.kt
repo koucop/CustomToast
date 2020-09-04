@@ -1,58 +1,44 @@
 package com.kwang0.customtoast
 
-import android.animation.Animator
-import android.animation.AnimatorListenerAdapter
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import com.kwang0.customtoast.helper.SystemToastHelper
 import kotlinx.android.synthetic.main.activity_main.*
 
 
-class MainActivity : AppCompatActivity() {
-
-    private var count = 0
+class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        buttonToast.setOnClickListener {
-//            showSystemToast()
-            showCustomToast()
+        buttonSystemShortToast.setOnClickListener(this)
+        buttonSystemLongToast.setOnClickListener(this)
+        buttonCustomToast.setOnClickListener(this)
+    }
+
+    override fun onClick(v: View?) {
+        v?.also {
+            when (v) {
+//                buttonSystemShortToast, buttonSystemLongToast -> {
+//                    SystemToastHelper.showToast(v, "Show Toast")
+//                }
+
+                buttonSystemShortToast -> {
+                    SystemToastHelper.showShortToast(this, "Show Short Toast")
+                }
+
+                buttonSystemLongToast -> {
+                    SystemToastHelper.showLongToast(this, "Show Long Toast")
+                }
+
+                buttonCustomToast -> {
+                    customToast.showCustomToast()
+                }
+            }
         }
     }
 
-    private fun showCustomToast() {
-        textToast.clearAnimation()
-        textToast.text = "$count"
 
-        textToast.visibility = View.VISIBLE
-        textToast.animate().apply {
-            duration = 500
-            alpha(0.8f)
-            setListener(object : AnimatorListenerAdapter() {
-                override fun onAnimationEnd(animation: Animator) {
-                    hideCustomToast()
-                }
-            })
-        }.start()
-        addCount()
-    }
-
-    private fun hideCustomToast() {
-        textToast.animate().apply {
-            duration = 500
-            startDelay = 500
-            alpha(0.0f)
-            setListener(object : AnimatorListenerAdapter() {
-                override fun onAnimationEnd(animation: Animator) {
-                    textToast.visibility = View.GONE
-                }
-            })
-        }.start()
-    }
-
-    private fun addCount() {
-        count++
-    }
 }
