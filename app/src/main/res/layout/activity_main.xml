@@ -6,8 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/textToast"
+    <com.kwang0.customtoast.view.CustomToastView
+        android:id="@+id/customToast"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -20,12 +20,35 @@
         tools:text="111"
         tools:visibility="visible" />
 
-    <Button
-        android:id="@+id/buttonToast"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:padding="16dp"
-        android:text="SHOW TOAST" />
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonSystemShortToast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:text="SHOW SYSTEM SHORT TOAST"
+            android:tag="@string/tag_short_toast" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonSystemLongToast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:text="SHOW SYSTEM LONG TOAST"
+            android:tag="@string/tag_long_toast" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonCustomToast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:text="SHOW CUSTOM TOAST" />
+
+    </LinearLayout>
 
 </FrameLayout>
