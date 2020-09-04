@@ -11,11 +11,11 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="16dp"
+        android:alpha="0.0"
         android:background="@drawable/bg_custom_toast"
         android:padding="8dp"
         android:textColor="@android:color/white"
         android:visibility="gone"
-        android:alpha="0.0"
         tools:text="111"
         tools:visibility="visible" />
 
@@ -29,26 +29,26 @@
             android:id="@+id/buttonSystemShortToast"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="16dp"
             android:layout_gravity="center_horizontal"
-            android:text="SHOW SYSTEM SHORT TOAST"
-            android:tag="@string/tag_short_toast" />
+            android:padding="16dp"
+            android:tag="@string/tag_short_toast"
+            android:text="SHOW SYSTEM SHORT TOAST" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/buttonSystemLongToast"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="16dp"
             android:layout_gravity="center_horizontal"
-            android:text="SHOW SYSTEM LONG TOAST"
-            android:tag="@string/tag_long_toast" />
+            android:padding="16dp"
+            android:tag="@string/tag_long_toast"
+            android:text="SHOW SYSTEM LONG TOAST" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/buttonCustomToast"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="16dp"
             android:layout_gravity="center_horizontal"
+            android:padding="16dp"
             android:text="SHOW CUSTOM TOAST" />
 
     </LinearLayout>
