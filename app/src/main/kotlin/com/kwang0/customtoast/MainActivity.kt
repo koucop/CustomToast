@@ -4,10 +4,6 @@ import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
 import android.os.Bundle
 import android.view.View
-import android.view.animation.Animation
-import android.view.animation.Animation.AnimationListener
-import android.view.animation.LinearInterpolator
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -24,11 +20,6 @@ class MainActivity : AppCompatActivity() {
 //            showSystemToast()
             showCustomToast()
         }
-    }
-
-    private fun showSystemToast() {
-        Toast.makeText(this, "$count", Toast.LENGTH_SHORT).show()
-        addCount()
     }
 
     private fun showCustomToast() {
