@@ -21,16 +21,18 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(v: View?) {
         v?.also {
             when (v) {
-//                buttonSystemShortToast, buttonSystemLongToast -> {
-//                    SystemToastHelper.showToast(v, "Show Toast")
-//                }
-
                 buttonSystemShortToast -> {
                     SystemToastHelper.showShortToast(this, "Show Short Toast")
                 }
 
                 buttonSystemLongToast -> {
                     SystemToastHelper.showLongToast(this, "Show Long Toast")
+                }
+
+                // You can use tags for divide usage for showing toast
+                // If you want to check this out, please remove upside code
+                buttonSystemShortToast, buttonSystemLongToast -> {
+                    SystemToastHelper.showToast(v, "Show Toast")
                 }
 
                 buttonCustomToast -> {
