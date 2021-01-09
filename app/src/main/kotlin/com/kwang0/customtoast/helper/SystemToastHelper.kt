@@ -25,7 +25,7 @@ object SystemToastHelper {
                     Toast.makeText(context, it, Toast.LENGTH_SHORT).show()
                 }
                 else -> {
-                    Toast.makeText(context, it, Toast.LENGTH_SHORT)?.also { toast ->
+                    Toast.makeText(context, it, Toast.LENGTH_SHORT).also { toast ->
                         toast.setGravity(gravity, xOffset, yOffset)
                         toast.show()
                     }
@@ -35,13 +35,23 @@ object SystemToastHelper {
     }
 
     fun showLongToast(context: Context, message: String?) {
-        message?.also {
-            Toast.makeText(context, it, Toast.LENGTH_SHORT).show()
-        }
+        showLongToast(context, message, 0, 0, 0)
     }
 
     fun showLongToast(context: Context, message: String?, gravity: Int, xOffset: Int, yOffset: Int) {
-
+        message?.also {
+            when {
+                gravity == 0 && xOffset == 0 && yOffset == 0 -> {
+                    Toast.makeText(context, it, Toast.LENGTH_LONG).show()
+                }
+                else -> {
+                    Toast.makeText(context, it, Toast.LENGTH_LONG).also { toast ->
+                        toast.setGravity(gravity, xOffset, yOffset)
+                        toast.show()
+                    }
+                }
+            }
+        }
     }
 
     fun showToast(view: View, message: String?) {

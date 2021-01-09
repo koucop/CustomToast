@@ -1,6 +1,7 @@
 package com.kwang0.customtoast
 
 import android.os.Bundle
+import android.view.Gravity
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.kwang0.customtoast.helper.SystemToastHelper
@@ -14,7 +15,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         setContentView(R.layout.activity_main)
 
         buttonSystemShortToast.setOnClickListener(this)
+        buttonSystemShortGravityToast.setOnClickListener(this)
         buttonSystemLongToast.setOnClickListener(this)
+        buttonSystemLongGravityToast.setOnClickListener(this)
         buttonCustomToast.setOnClickListener(this)
     }
 
@@ -25,13 +28,21 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                     SystemToastHelper.showShortToast(this, "Show Short Toast")
                 }
 
+                buttonSystemShortGravityToast -> {
+                    SystemToastHelper.showShortToast(this, "Show Short Gravity Toast", Gravity.TOP or Gravity.START, 0 ,0)
+                }
+
                 buttonSystemLongToast -> {
                     SystemToastHelper.showLongToast(this, "Show Long Toast")
                 }
 
+                buttonSystemLongGravityToast -> {
+                    SystemToastHelper.showLongToast(this, "Show Long Gravity Toast", Gravity.TOP or Gravity.END, 0 ,0)
+                }
+
                 // You can use tags for divide usage for showing toast
                 // If you want to check this out, please remove upside code
-                buttonSystemShortToast, buttonSystemLongToast -> {
+                buttonSystemShortToast, buttonSystemShortGravityToast, buttonSystemLongToast, buttonSystemLongGravityToast -> {
                     SystemToastHelper.showToast(v, "Show Toast")
                 }
 
