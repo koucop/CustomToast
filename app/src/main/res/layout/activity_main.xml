@@ -32,7 +32,16 @@
             android:layout_gravity="center_horizontal"
             android:padding="16dp"
             android:tag="@string/tag_short_toast"
-            android:text="SHOW SYSTEM SHORT TOAST" />
+            android:text="@string/show_system_short_toast" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonSystemShortGravityToast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:padding="16dp"
+            android:tag="@string/tag_short_toast"
+            android:text="@string/show_system_short_gravity_toast" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/buttonSystemLongToast"
@@ -41,7 +50,16 @@
             android:layout_gravity="center_horizontal"
             android:padding="16dp"
             android:tag="@string/tag_long_toast"
-            android:text="SHOW SYSTEM LONG TOAST" />
+            android:text="@string/show_system_long_toast" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonSystemLongGravityToast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:padding="16dp"
+            android:tag="@string/tag_long_toast"
+            android:text="@string/show_system_long_gravity_toast" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/buttonCustomToast"
@@ -49,7 +67,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:padding="16dp"
-            android:text="SHOW CUSTOM TOAST" />
+            android:text="@string/show_custom_toast" />
 
     </LinearLayout>
 
