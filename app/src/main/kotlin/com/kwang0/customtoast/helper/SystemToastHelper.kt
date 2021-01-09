@@ -1,6 +1,7 @@
 package com.kwang0.customtoast.helper
 
 import android.content.Context
+import android.view.Gravity
 import android.view.View
 import android.widget.Toast
 import com.kwang0.customtoast.R
@@ -13,10 +14,18 @@ object SystemToastHelper {
         }
     }
 
+    fun showShortToast(context: Context, message: String?, gravity: Gravity, xOffset: Int?, yOffset: Int?) {
+
+    }
+
     fun showLongToast(context: Context, message: String?) {
         message?.also {
             Toast.makeText(context, it, Toast.LENGTH_SHORT).show()
         }
+    }
+
+    fun showLongToast(context: Context, message: String?, gravity: Gravity, xOffset: Int?, yOffset: Int?) {
+        
     }
 
     fun showToast(view: View, message: String?) {
