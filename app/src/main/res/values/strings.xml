@@ -2,7 +2,10 @@
     <string name="app_name">CustomToast</string>
 
     <string name="tag_short_toast">ShortToast</string>
+    <string name="tag_short_gravity_toast">ShortToast</string>
     <string name="tag_long_toast">LongToast</string>
+    <string name="tag_long_gravity_toast">LongToast</string>
+
     <string name="show_system_short_toast">SHOW SYSTEM SHORT TOAST</string>
     <string name="show_system_short_gravity_toast">SHOW SYSTEM SHORT GRAVITY TOAST</string>
     <string name="show_system_long_toast">SHOW SYSTEM LONG TOAST</string>
