@@ -40,7 +40,7 @@ object SystemToastHelper {
         }
     }
 
-    fun showLongToast(context: Context, message: String?, gravity: Gravity, xOffset: Int?, yOffset: Int?) {
+    fun showLongToast(context: Context, message: String?, gravity: Int, xOffset: Int, yOffset: Int) {
 
     }
 
@@ -50,8 +50,16 @@ object SystemToastHelper {
                 showShortToast(view.context, message)
             }
 
+            ResourceUtils.getString(view.context, R.string.tag_short_gravity_toast) -> {
+                showShortToast(view.context, message, Gravity.TOP, 0, 0)
+            }
+
             ResourceUtils.getString(view.context, R.string.tag_long_toast) -> {
                 showLongToast(view.context, message)
+            }
+
+            ResourceUtils.getString(view.context, R.string.tag_long_gravity_toast) -> {
+                showLongToast(view.context, message, Gravity.TOP, 0, 0)
             }
         }
     }
